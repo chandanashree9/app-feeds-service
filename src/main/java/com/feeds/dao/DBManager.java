@@ -88,7 +88,7 @@ public class DBManager {
 		Connection conn = null;
 		try {
 			conn = openDBConnection();
-			String sql = "SELECT CONTENT, PUBLISH_DATE FROM FEEDS ORDER BY PUBLISH_DATE DESC";
+			String sql = "SELECT CONTENT, PUBLISH_DATE FROM FEEDS ORDER BY PUBLISH_DATE, ID DESC";
 			Statement statement = conn.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			if (rs != null) {
