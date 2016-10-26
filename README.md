@@ -8,7 +8,7 @@ Service to publish and display feeds data
 		- mysql > connect app_feed;
 		- mysql > CREATE CREATE TABLE FEEDS (
 					ID MEDIUMINT NOT NULL AUTO_INCREMENT,
-					CONTENT VARCHAR(30) NULL,
+					CONTENT VARCHAR(5000) NULL,
 					PUBLISH_DATE DATE NULL,
 					PRIMARY KEY (ID)
 				);

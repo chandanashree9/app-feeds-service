@@ -39,7 +39,10 @@ public class FeedServiceResources {
 		}
 		jsonObj.add("feeds", array);
 
-		return Response.status(200).entity(gson.toJson(jsonObj)).build();
+		return Response.status(200).entity(gson.toJson(jsonObj)).header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS")
+				.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, X-Codingpedia,Authorization")
+				.build();
 	}
 
 	@POST
@@ -55,6 +58,9 @@ public class FeedServiceResources {
 			code = 500;
 			message = "Failed to publish feed";
 		}
-		return Response.status(code).entity(message).build();
+		return Response.status(code).entity(message).header("Access-Control-Allow-Origin", "*")
+				.header("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, OPTIONS")
+				.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, X-Codingpedia,Authorization")
+				.build();
 	}
 }
